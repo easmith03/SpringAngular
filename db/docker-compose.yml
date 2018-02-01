@@ -10,7 +10,7 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: admin
-      POSTGRES_DB: testdb
+      POSTGRES_DB: database
     ports:
     - "5432:5432"
     networks:
