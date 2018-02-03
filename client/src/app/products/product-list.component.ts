@@ -12,7 +12,7 @@ export class ProductListComponent implements OnInit {
  
   pageTitle: String = 'Product List';
   imageWidth: number = 50;
-  imageMargin: number =2;
+  imageMargin: number = 2;
   products: IProduct[] ;
   showImage: boolean = false;
   _listFilter: string = '';
@@ -28,12 +28,12 @@ export class ProductListComponent implements OnInit {
   }
 
   get listFilter(): string {
-    return this._listFilter;  
+    return this._listFilter;
   }
 
   set listFilter(filter: string) {
     this._listFilter = filter;
-    this.filteredProducts = this._listFilter ? this.performListFilter(this._listFilter) : this.products; 
+    this.filteredProducts = this._listFilter ? this.performListFilter(this._listFilter) : this.products;
   }
 
   performListFilter(filter: string): IProduct[] {

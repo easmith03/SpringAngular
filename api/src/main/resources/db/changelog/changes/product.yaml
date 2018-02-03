@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - preConditions:
+    - runningAs:
+        username: admin
+
+  - changeSet:
+      id: product_5
+      author: eric.smith
+      changes:
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: product_id
+                  type: integer
+              - column:
+                  name: product_name
+                  type: text
+              - column:
+                  name: product_code
+                  type: text
+              - column:
+                  name: release_date
+                  type: text
+              - column:
+                  name: price
+                  type: real
+              - column:
+                  name: star_rating
+                  type: real
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: image_url
+                  type: text
+
+  - changeSet:
+      id: product_6
+      author: eric.smith
+      changes:
+        - loadData:
+            catalogName: cat
+            encoding: UTF-8
+            file: db\changelog\changes\data\product.csv
+            quotchar: "'"
+            schemaName: public
+            separator: ","
+            tableName: product
