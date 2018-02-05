@@ -9,7 +9,7 @@ import { ProductService } from './product.service';
 })
 
 export class ProductListComponent implements OnInit {
- 
+
   pageTitle: String = 'Product List';
   imageWidth: number = 50;
   imageMargin: number = 2;
@@ -46,16 +46,16 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this._productService.getProducts()
     .subscribe(
-      products=> {
+      products => {
         this.products = products;
         this.filteredProducts = this.products;
       },
-      err=> this.errorMessage = <any>err
+      err => this.errorMessage = <any>err
     );
 
-   };
+   }
 
   onNotify(e: string): void {
     console.log('event', e);
-  };
+  }
 }
